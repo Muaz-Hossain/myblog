@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div class="cls-sm-10">
+    <h3 class='text-white my-5'>Login Page</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for fm in form%}
+         <div class="form-group">
+         {{fm.label_tag}} {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+         </div>
+        {% endfor %}
+        <input type="submit" value="Login" class="btn bnt-primary">
+    </form>
+    
+</div>
+{% endblock content %}
